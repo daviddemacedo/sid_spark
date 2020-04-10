@@ -1,0 +1,10 @@
+note 
+
+my_df = spark.read.csv("caracteristiques-*", header = "true", encoding = "ISO-8859-1", inferSchema= True)
+my_df.show()
+
+df2= my_df.select("an", "mois", "dep", "com")
+
+my_df.groupBy("an", "dep").count().sort("count",ascending=False).show()
+selectVoiture2014 = voiture2014.select("lib_mrq", "dscom", "typ_cbr", "puiss_admin_98", "puiss_max", "conso_urb", "conso_exurb", "conso_mixte", "co2", "date_maj")
+
