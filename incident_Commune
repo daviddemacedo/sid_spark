@@ -1,8 +1,17 @@
+from functools import reduce
+from pyspark.sql import DataFrame
+
 df = spark.read.csv("caracteristiques*.csv", header = "true", inferSchema= True, encoding = "ISO-8859-1")
+df2009 = spark.read.csv("2009_caracteristiques.csv", header = "true", inferSchema= True, encoding = "ISO-8859-1", sep = '\t')
+dfs = [df, df2009]
+df_complete = reduce(DataFrame.unionAll, dfs)
+df_complete.show()
 
 com = spark.read.csv("code-postal-code-insee-2015.csv", header = "true", inferSchema= True, encoding = "ISO-8859-1", sep = ";")
 
-df1 = df.select("an", "com")
+df1 = df_complete.select("an", "com")
 
 com1 = com.select("CODE_COM", "Code_postal", "NOM_COM")
 
+dfcom = df1.join(com1, df1.com == com1.CODE_COM, 'inner')
+final = dfcom.groupBy("an", "Code_postal", "NOM_COM").count().sort("count",ascending=False)
