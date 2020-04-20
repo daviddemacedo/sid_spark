@@ -1,0 +1,8 @@
+df = spark.read.csv("caracteristiques*.csv", header = "true", inferSchema= True, encoding = "ISO-8859-1")
+
+com = spark.read.csv("code-postal-code-insee-2015.csv", header = "true", inferSchema= True, encoding = "ISO-8859-1", sep = ";")
+
+df1 = df.select("an", "com")
+
+com1 = com.select("CODE_COM", "Code_postal", "NOM_COM")
+
