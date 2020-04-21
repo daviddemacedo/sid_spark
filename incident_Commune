@@ -15,3 +15,10 @@ com1 = com.select("CODE_COM", "Code_postal", "NOM_COM")
 
 dfcom = df1.join(com1, df1.com == com1.CODE_COM, 'inner')
 final = dfcom.groupBy("an", "Code_postal", "NOM_COM").count().sort("count",ascending=False)
+
+
+#suppretion dernier 0 
+from pyspark.sql.functions import substring, length, col, expr
+df1 = df1.withColumn('dep1', expr("substring(dep, 1, length(dep)-1)"))
+
+df1 = df1.withColumn('dep1', when((expr("substring(dep, 3)") == 0) | (expr("substring(dep, 2)") == 0), expr("substring(dep, 1, length(dep)-1)")).otherwise(col("dep")))
