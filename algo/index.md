@@ -1,3 +1,5 @@
+# Algorithme de résolution de ce problème
+
 Nous avons deux « chaînes » de fichiers de données à exprimer : <br>
 <ol>
 <li>Chaîne de<strong> traitement des fichiers accidents Caractéristiques.csv</strong> du Ministère de l'Intérieur </li>
