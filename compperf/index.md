@@ -1,3 +1,5 @@
+# Comparaison des performances des différentes versions du programme
+
 ## Exécution du programme en stand-alone
 Afin d'effectuer la comparaison de notre programme en mode local contre le mode cluster, nous allons dans un premier temps lancer notre script en local sur une des machines du cluster (en effet, il ne nous paraît pas très adéquate de comparer les performances entre le lancement de notre application sur nos pc personnels et le cluster via les instances fournis par l'université. Nos machines personnelles sont bien plus puissantes et l'environnement est totalement différent). 
 
