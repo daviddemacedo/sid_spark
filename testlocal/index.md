@@ -1,3 +1,5 @@
+# Test du programme avec l'installation locale
+
 L'exécution de notre script Python nous donne le résultat suivant : 
 ```
 √ jdd % time spark-submit --master "local[1]" ./incidents_corp.py
