@@ -32,12 +32,12 @@ Nous obtenons bien le résultat voulu :
 +-----------+--------------------+-----+
 ```
 Et via l'interface web de spark, on peut voir différentes informations intéressantes: <br>
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/spark1.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark1.png)
 Nous pouvons observer que l'application a mis 58s pour s'exécuter. 
 En cliquant sur les différents onglets, on obtient le détaille de l'exécution des différentes tâches de notre programme : <br>
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/spark2.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/spark3.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/spark4.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark2.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark3.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark4.png)
 
 ## Exécution du programme en cluster (default)
 
@@ -109,10 +109,10 @@ On peut voir dans les logs d'exécution de l'application que cette dernière s'e
 ```
 
 L'interface web de spark nous montre : 
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkcluster1.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkcluster2.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkcluster3.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkcluster4.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkcluster1.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkcluster2.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkcluster3.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkcluster4.png)
 
 On observe que notre programme met plus de temps à se finaliser en mode cluster qu'en mode local, certaine tâches mettent plus de temps en mode cluster.
 Etant donnée qu'on utilise plus de ressources en mode cluster, on devrait en théorie avoir de meilleures performances en mode cluster. Néanmoins, notre jeux de données n'est pas assez volumineux pour qu'il y ait un intérêt à l'utiliser via une architecture hadoop / spark en cluster. Cette technologie a été crée pour traiter des données très importantes. C'est pour ce type de données très volumineuses qu'un cluster hadoop / spark prend tout son intérêt. 
@@ -129,19 +129,19 @@ spark.executor.instances  11
 A noter qu'il est possible d'initialiser autant d'_executor_ tant qu'on a de la mémoire disponible. Lorsqu'on arrivera au maximum de mémoire utilisée spécifié dans les paramètres yarn, spark ne pourra plus initialiser des _executor_.
 
 Exécutons notre application avec cette conf pour observer le résultat : 
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkclusterrep1.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkclusterrep2.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkclusterrep3.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkclusterrep4.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep1.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep2.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep3.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep4.png)
 
 Nous remarquons qu'il a fallu encore plus de temps pour traiter notre application: **1,8 min** contre **1,1 min** avec la configuration précédente. 
 Néanmoins, on observe que l'ensemble de nos instances ont été utilisées. 2 _executor_ ont étés répartis sur chaque instance comme prévu (et 1 `executor` pour l'instance qui porte le driver). Par contre, la plupart des tâches ont été exécutées uniquement par 2 executor. Il n'y a donc pas vraiment de valeur ajouté à répartir les différentes tâches de notre programme au sein des différents worker. 
 
 ## Test de résilience du cluster
 Afin de tester la résilience de notre cluster, nos avons également fait un test de panne d'un worker pendant l'exécution de notre application : 
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkfailover1.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkfailover2.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/sparkfailover3.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkfailover1.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkfailover2.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkfailover3.png)
 
 Nous avons pu observer que le cluster s'est rendu compte qu'un _executor_ ne répondait plus. Il a donc recommencé le traitement de notre programme en initialisant 2 nouveaux _executor_. 
 Avec ce test, nous avons pu constater que notre cluster était tolérant à la panne d'un noeud. 
