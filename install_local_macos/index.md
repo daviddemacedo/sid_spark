@@ -4,7 +4,8 @@ Ouvrir un terminal et taper la commande suivante : <br>
 
 Entrer votre mot de passe lorsqu'il est demandé. 
 
-```==> Cleaning up /Library/Caches/Homebrew...
+```
+==> Cleaning up /Library/Caches/Homebrew...
 ==> Migrating /Library/Caches/Homebrew to /Users/apple/Library/Caches/Homebrew..
 ==> Deleting /Library/Caches/Homebrew...
 Already up-to-date.
@@ -29,7 +30,8 @@ Pour installer Java en ligne de commande, entrez et exécutez la commande suivan
 `brew cask install java`
 
 Vous devriez obtenir l'écran suivant : 
-```If your Java application still asks for JRE installation, you might need
+```
+If your Java application still asks for JRE installation, you might need
 to reboot or logout/login.
  
 Installing this Cask means you have AGREED to the Oracle Binary Code
@@ -57,7 +59,8 @@ Pour installer Scala via la ligne de commande, entrez et exécutez la commande s
 `brew install scala`
 
 Vous devriez obtenir l'écran suivant : 
-```apples-MBP:~ Prasanth$ brew install scala
+```
+apples-MBP:~ Prasanth$ brew install scala
 Updating Homebrew...
 ==> Auto-updated Homebrew!
 Updated 1 tap (homebrew/core).
@@ -85,7 +88,8 @@ Pour installer Apache Spark via la ligne de commande, entrez et exécutez la com
 `brew install apache-spark`
 
 Vous devriez obtenir l'écran suivant : 
-```apples-MBP:~ Prasanth$ brew install apache-spark
+```
+apples-MBP:~ Prasanth$ brew install apache-spark
 ==> Using the sandbox
 ==> Downloading https://www.apache.org/dyn/closer.lua?path=spark/spark-2.2.0/spa
 ==> Best Mirror http://www-eu.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-
@@ -99,7 +103,8 @@ Pour vérifier si l'installation est réussie, lancez spark en utilisant la comm
 `spark-shell`
 
 Vous devriez obtenir l'écran suivant : 
-```pples-MBP:~ Prasanth$ spark-shell
+```
+apples-MBP:~ Prasanth$ spark-shell
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
