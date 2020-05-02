@@ -34,9 +34,9 @@ drwxr-xr-x   - ubuntu supergroup          0 2020-04-18 23:56 /user
 ```
 
 Il est également possible de visualiser le cluster hadoop via une interface web, ceci en utilisant l'ip du master port 9870, `http://172.28.100.136:9870` : 
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/hdfs.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/hdfs1.png)
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/hdfs2.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/hdfs.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/hdfs1.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/hdfs2.png)
 
 
 
