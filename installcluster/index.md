@@ -1,3 +1,5 @@
+# Installation Cluster Hadoop avec HDFS, YARN et SPARK
+
 Vous trouverez sur cette page, un guide afin d'installer une architecture Hadoop sous ubuntu avec 6 Instances.
 Toutes les actions sont à répéter sur chaque instance.
 
