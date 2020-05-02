@@ -20,6 +20,8 @@
 
 [Comparaison des performances des différentes versions du programme](https://daviddemacedo.github.io/sid_spark/compperf/)
 
-[Bibliographie](https://daviddemacedo.github.io/sid_spark/biblio)/
+[Conclusion](https://daviddemacedo.github.io/sid_spark/conclusion/)
+
+[Bibliographie](https://daviddemacedo.github.io/sid_spark/biblio/)
 
 
