@@ -1,3 +1,5 @@
+# Programme porté sur cluster YARN, données stockées sur le système de fichier HDFS
+
 Nous avons au préalable récupéré nos jeux de données sur nos instances. 
 
 Afin de porter notre programme sur le cluster yarn, il faut d'abord y insérer notre jeux de données : 
