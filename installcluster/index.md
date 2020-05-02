@@ -341,7 +341,7 @@ start-dfs.sh && start-yarn.sh
 ```
 Nous pouvons tester le cluster en mettant des fichiers dans le HDFS à partir de n'importe quelles instances (en utilisant `hadoop fs -put`) et en nous assurant qu'ils apparaissent sur d'autres instances (en utilisant `hadoop fs -ls`). Vous pouvez également vérifier que le cluster est opérationnel en ouvrant un navigateur web et en naviguant sur http://master:9870. Cette interface web vous donne accès à un explorateur de fichiers ainsi qu'à des informations sur la santé du cluster.
 
-![hadoop img web](https://github.com/daviddemacedo/sid_spark/blob/master/hadoop.png)
+![hadoop img web](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/hadoop.png)
 
 ## Explication des paramètres mémoire 
 
@@ -362,7 +362,7 @@ Cette valeur est configurée dans `yarn-site.xml` avec `yarn.nodemanager.resourc
 4. La quantité de mémoire qui sera allouée à chaque opération map ou reduce. Celle-ci doit être inférieure à la taille maximale. Ceci est configuré dans `mapred-site.xml` avec les propriétés `mapreduce.map.memory.mb` et `mapreduce.reduce.memory.mb`.
 
 La relation entre toutes ces propriétés est illustrée dans la figure suivante :
-![](https://github.com/daviddemacedo/sid_spark/blob/master/img/memory.png)
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/memory.png)
 
 ## Configurer Spark en cluster
 
