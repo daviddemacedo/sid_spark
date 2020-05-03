@@ -378,7 +378,7 @@ export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
 cd $SPARK_HOME/conf
 sudo mv spark-defaults.conf.template spark-defaults.conf
 ```
-Beaucoup de paramètres peuvent être personnalisés dans ce fichier, notamment ceux relatifs à la mémoire allouée aux conteneurs spark. En effet, ces derniers pour fonctionner dans des conteneurs YARN peut échouer si l'allocation de la mémoire n'est pas configurée correctement. <br>
+Beaucoup de paramètres peuvent être personnalisés dans ce fichier, notamment ceux relatifs à la mémoire allouée aux conteneurs spark. En effet, ces derniers fonctionnant dans des conteneurs YARN peuvent échouer si l'allocation de la mémoire n'est pas configurée correctement. <br>
 Si la mémoire demandée est supérieure au maximum autorisé, YARN refusera la création du conteneur et notre application Spark ne démarrera pas. Il est donc nécessaire au préable de s'assurer que la valeur de `yarn.scheduler.maximum-allocation-mb` dans `$HADOOP_CONF_DIR/yarn-site.xml` (ce paramètre correspond à la valeur maximale autorisée en MB pour un seul conteneur) est supérieure à l'allocation mémoire configurée pour spark. 
 
 Nous avons observé qu'en laissant les paramètres par défaut la mémoire allouée pour spark ne dépassait pas les 3GB configurés pour YARN. Dans un premier temps, nous ne personnalisons pas ces paramètres, nous y reviendrons plus tard dans le TP. 
