@@ -1,9 +1,9 @@
 # Création de machines virtuelles sur OpenStack
 
-Pour réaliser la partie cluster de ce TP, il est nécessaire de créer plusieurs machines virtuelles (VM) hébergées sur OpenStack ![](http://cloud.univ-lille.fr/).
+Pour réaliser la partie cluster de ce TP, il est nécessaire de créer plusieurs machines virtuelles (VM) hébergées sur OpenStack (http://cloud.univ-lille.fr/).
 Notre cluster étant composé d'une VM master et de VM 5 slaves que nous avons nommées : master, slave1, slave2, slave3, slave4 et slave5.
 
-Pour cela, suivez le tutoriel suivant : ![](http://cloud.univ-lille.fr/cloud_ULille_tutoriel.pdf) avec les informations suivantes :
+Pour cela, suivez le tutoriel suivant : (http://cloud.univ-lille.fr/cloud_ULille_tutoriel.pdf) avec les informations ci-dessous :
 - Source : "ubuntu-18.04"
 - Gabarit: "puissante"
 
