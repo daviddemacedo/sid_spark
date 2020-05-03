@@ -150,3 +150,5 @@ Avec ce test, nous avons pu constater que notre cluster était tolérant à la p
 
 
 [Page Suivante](https://daviddemacedo.github.io/sid_spark/conclusion/)
+
+[Retour Sommaire](https://daviddemacedo.github.io/sid_spark/)
