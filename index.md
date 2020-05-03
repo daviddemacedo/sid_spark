@@ -20,6 +20,8 @@ Floriane Chalet<br>
 
 [Test du programme avec l'installation locale](https://daviddemacedo.github.io/sid_spark/testlocal/)
 
+[Création des machines virtuelles sur OpenStack](https://daviddemacedo.github.io/sid_spark/openstack/)
+
 [Installation Cluster Hadoop avec HDFS, YARN et SPARK](https://daviddemacedo.github.io/sid_spark/installcluster/)
 
 [Programme porté sur cluster YARN, données stockées sur le système de fichier HDFS](https://daviddemacedo.github.io/sid_spark/progcluster/)
