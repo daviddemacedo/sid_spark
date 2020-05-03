@@ -6,6 +6,8 @@ Floriane Chalet<br>
 
 # Sommaire
 
+## Installation locale 
+
 [Installation de Spark sur une machine locale MacOs](https://daviddemacedo.github.io/sid_spark/install_local_macos/)
 
 [Installation de Spark sur une machine locale Windows 10](https://daviddemacedo.github.io/sid_spark/install_local_win/)
@@ -19,6 +21,8 @@ Floriane Chalet<br>
 [Code avec Spark à partir de l'algorithme](https://daviddemacedo.github.io/sid_spark/codepy/)
 
 [Test du programme avec l'installation locale](https://daviddemacedo.github.io/sid_spark/testlocal/)
+
+## Parallélisation sur un cluster
 
 [Création des machines virtuelles sur OpenStack](https://daviddemacedo.github.io/sid_spark/openstack/)
 
