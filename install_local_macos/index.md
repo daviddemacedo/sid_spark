@@ -162,7 +162,7 @@ $ pyenv version
 Pour qu'il fonctionne correctement, vous devez ajouter les éléments suivants à votre fichier de configuration (.zshrc dans notre cas, éventuellement .bash_profile pour vous) :<br>
 `$ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc`
 
-VOus devez également supprimer les alias utilisés dans les sections ci-dessus car ils empêcheraient d'utiliser correctement pyenv. Après les avoir supprimés, vous pouvez confirmer que pyenv gère votre version de Python 3 :
+Vous devez également supprimer les alias utilisés dans les sections ci-dessus car ils empêcheraient d'utiliser correctement pyenv. Après les avoir supprimés, vous pouvez confirmer que pyenv gère votre version de Python 3 :
 ```
 # I start by resetting the current shell
 $ exec $0
