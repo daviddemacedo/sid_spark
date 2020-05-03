@@ -1,10 +1,10 @@
 # Installez Spark sur votre machine locale MacOs
 
-##  Step 1 : Install Homebrew
-Ouvrir un terminal et taper la commande suivante : <br>
+##  Etape 1 : Installation de Homebrew
+Ouvrez un terminal et taper la commande suivante : <br>
 `/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”`
 
-Entrer votre mot de passe lorsqu'il est demandé. 
+Entrez votre mot de passe lorsqu'il est demandé. 
 
 ```
 ==> Cleaning up /Library/Caches/Homebrew...
@@ -23,11 +23,11 @@ Read the analytics documentation (and how to opt-out) here:
     http://docs.brew.sh
 ```
 
-## Step 2 : Install xcode-select
+## Etape 2 : Installation de xcode-select
 Pour installer Java, Scala et Apache Spark en ligne de commande via le terminal, nous allons installer xcode-select. Entrez et exécutez la commande suivante dans Terminal : <br>
 `xcode-select –install`
 
-## Step 3 : Install Java
+## Etape 3 : Installation de Java
 Pour installer Java en ligne de commande, entrez et exécutez la commande suivante dans le Terminal :<br>
 `brew cask install java`
 
@@ -55,7 +55,7 @@ Password:
 ? java was successfully installed!
 ```
 
-## Step 4 : Installation de Scala
+## Etape 4 : Installation de Scala
 
 Pour installer Scala via la ligne de commande, entrez et exécutez la commande suivante dans le terminal :<br>
 `brew install scala`
@@ -84,7 +84,7 @@ Bash completion has been installed to:
 ? /usr/local/Cellar/scala/2.12.3: 44 files, 20.1MB, built in 1 minute 1 second
 ```
 
-## Step 5 : Install Spark
+## Etape 5 : Installation de Spark
 
 Pour installer Apache Spark via la ligne de commande, entrez et exécutez la commande suivante dans le Terminal : <br>
 `brew install apache-spark`
@@ -99,7 +99,7 @@ apples-MBP:~ Prasanth$ brew install apache-spark
 ? /usr/local/Cellar/apache-spark/2.2.0: 1,318 files, 221.5MB, built in 12 minutes 8 seconds
 ```
 
-## Step 6 : Vérifier l'installation
+## Etape 6 : Vérification de l'installation
 
 Pour vérifier si l'installation est réussie, lancez spark en utilisant la commande suivante dans Terminal :<br>
 `spark-shell`
@@ -141,7 +141,7 @@ $ brew install pyenv
 ```
 Cet outil gérera plusieurs versions de Python et est décrit comme "simple, discret, et suit la tradition Unix des outils à usage unique qui font une chose bien".
 
-Installons maintenant la dernière version de Python (3.7.5 au moment où nous écrivons ces lignes) :
+Installez maintenant la dernière version de Python (3.7.5 au moment où nous écrivons ces lignes) :
 ```
 $ pyenv install 3.7.5
 python-build: use openssl 1.0 from homebrew
@@ -152,17 +152,17 @@ Installing Python-3.7.5...
 ## further output not included ##
 ```
 
-Maintenant que Python 3 est installé via pyenv, nous voulons le définir comme notre version globale par défaut pour les environnements pyenv : <br>
+Maintenant que Python 3 est installé via pyenv, définissez-le comme votre version globale par défaut pour les environnements pyenv : <br>
 ```
 $ pyenv global 3.7.5
 # and verify it worked
 $ pyenv version
 3.7.5 (set by /Users/mbbroberg/.pyenv/version)
 ```
-Pour qu'il fonctionne correctement, nous devons ajouter les éléments suivants à notre fichier de configuration (.zshrc pour moi, éventuellement .bash_profile pour vous) :<br>
+Pour qu'il fonctionne correctement, vous devez ajouter les éléments suivants à votre fichier de configuration (.zshrc dans notre cas, éventuellement .bash_profile pour vous) :<br>
 `$ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc`
 
-Nous devons également supprimer les alias que nous avons utilisés dans les sections ci-dessus car ils empêcheraient d'utiliser correctement pyenv. Après les avoir supprimés, nous pouvons confirmer que pyenv gère notre version de Python 3 :
+VOus devez également supprimer les alias utilisés dans les sections ci-dessus car ils empêcheraient d'utiliser correctement pyenv. Après les avoir supprimés, vous pouvez confirmer que pyenv gère votre version de Python 3 :
 ```
 # I start by resetting the current shell
 $ exec $0
