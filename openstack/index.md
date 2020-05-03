@@ -12,7 +12,7 @@ Lors de leur création, les instances récupèrent chacune une adresse IP dans l
 Les VM sont accessibles en SSH :
 - Depuis Windows vous pouvez par exemple utiliser l'outil Putty (https://www.putty.org/) ou Mobaxterm (https://mobaxterm.mobatek.net/download.html)
 - Depuis Linux il suffit simplement de lancer un terminal puis de lancer la commande suivante :
-`ssh debian@172.28.100.136`
+`ssh ubuntu@172.28.100.136`
 
 
 [Page Suivante](https://daviddemacedo.github.io/sid_spark/installcluster/)
