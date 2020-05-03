@@ -1,9 +1,9 @@
 # Code avec Spark à partir de l'algorithme
 
-Nous avons choisit de coder en language Python. 
+Nous avons choisi de coder en langage Python. 
 Python étant de plus en plus présent dans nos environnements de travail, il nous est paru intéressant de commencer à apprendre ce langage via ce TP. 
 
-Le code afin de résoudre la problématique est le suivant : 
+Le code permettant de résoudre la problématique est le suivant : 
 ```
 import sys
 import os
