@@ -1,25 +1,25 @@
-# Installez Spark sur votre machine locale Windows 10
+# Installation de Spark sur une machine locale Windows 10
 
-##  Etape 1 : Téléchargez les composants
+##  Etape 1 : Téléchargement les composants
 
 ### a) Téléchargement de Spark
 La version de Spark est disponible sur le site d'Apache https://spark.apache.org/downloads.html
 ![](https://user-images.githubusercontent.com/54117403/79692135-cf544100-8263-11ea-92fb-1b46cbde48a7.png)
  
-### b) Téléchargez Java 8
+### b) Téléchargement Java 8
 La version 8 de Java https://www.java.com/fr/download/
 ![](https://user-images.githubusercontent.com/54117403/79693224-b058ad80-8269-11ea-9653-bacfdd78df2f.PNG)
 
-### c) Télécharger Anaconda
-Télécharger Anaconda version 3.7 https://www.anaconda.com/
+### c) Téléchargement Anaconda
+Téléchargez Anaconda version 3.7 https://www.anaconda.com/
 ![](https://user-images.githubusercontent.com/54117403/79695176-a76dd900-8275-11ea-862c-44e69e3c7dd6.png)
 
-### d) Télécharger le fichier winutils.exe
-Télécharger le fichier sur GitHub https://github.com/steveloughran/winutils/tree/master/hadoop-2.7.1/bin
+### d) Téléchargement du fichier winutils.exe
+Téléchargez le fichier sur GitHub https://github.com/steveloughran/winutils/tree/master/hadoop-2.7.1/bin
 
 ![](https://user-images.githubusercontent.com/54117403/79695364-b739ed00-8276-11ea-8e3a-62a63b405112.png)
 
-##  Etape 2 : Installez les composants
+##  Etape 2 : Installation des composants
 
 ### a) Installation de Java 8
 Lancez l'installation via le setup <br>
