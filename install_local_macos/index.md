@@ -1,7 +1,7 @@
 # Installez Spark sur votre machine locale MacOs
 
 ##  Etape 1 : Installation de Homebrew
-Ouvrez un terminal et taper la commande suivante : <br>
+Ouvrez un terminal et tapez la commande suivante : <br>
 `/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”`
 
 Entrez votre mot de passe lorsqu'il est demandé. 
