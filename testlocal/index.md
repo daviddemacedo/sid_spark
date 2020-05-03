@@ -173,6 +173,6 @@ La commande `cat part-000* > result.csv` permet de tout regrouper dans le fichie
 Pour la suite de ce TP, nous n'allons pas écrire en disque les résultats. 
 
 
-[Page Suivante](https://daviddemacedo.github.io/sid_spark/installcluster/)
+[Page Suivante](https://daviddemacedo.github.io/sid_spark/openstack/)
 
 [Retour Sommaire](https://daviddemacedo.github.io/sid_spark/)
