@@ -24,7 +24,7 @@ Found 12 items
 -rw-r--r--   1 ubuntu supergroup  116056748 2020-04-23 11:04 /jdd/code-postal-code-insee-2015.csv
 ```
 
-Nous avons fait de même avec notre script Python, et enfin nous avons également crée un répertoire logs afin que les logs d'éxécutions de spark y soient présents:
+Nous avons fait de même avec notre script Python, et enfin nous avons également crée un répertoire logs afin que les logs d'exécutions de spark y soient présents:
 ```
 ubuntu@master:/opt/hadoop_tmp/hdfs$ hdfs dfs -ls /
 Found 5 items
