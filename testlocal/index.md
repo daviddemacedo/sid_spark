@@ -68,7 +68,7 @@ spark-submit ./incidents_corp.py  68,93s user 15,06s system 454% cpu 18,480 tota
 
 On retrouve bien le classement des 20 villes avec le plus d'incidents corporelles sur les 10 dernières années. <br>
 A noter qu'on pourrait avoir en sortie plus de ville en mettant un chiffre dans () de final.show(). 
-Par exemple final.show(30) nous donnerait en sortie les 3O villes avec le plus d'incidents corporelles sur les 10 dernières années: 
+Par exemple final.show(30) nous donnerait en sortie les 3O villes avec le plus d'incidents corporels sur les 10 dernières années: 
 ```
 +-----------+--------------------+-----+
 |Code_postal|             NOM_COM|count|
@@ -170,7 +170,7 @@ La commande `cat part-000* > result.csv` permet de tout regrouper dans le fichie
 ...
 ```
 
-Pour la suite de ce tp, nous n'allons pas écrire en disque les résultats. 
+Pour la suite de ce TP, nous n'allons pas écrire en disque les résultats. 
 
 
 [Page Suivante](https://daviddemacedo.github.io/sid_spark/installcluster/)
