@@ -10,8 +10,8 @@ Pour cela, suivez le tutoriel suivant : (http://cloud.univ-lille.fr/cloud_ULille
 Lors de leur création, les instances récupèrent chacune une adresse IP dans le même réseau : 172.28.100.0/16. Elles peuvent donc communiquer entre elles directement.
 
 Les VM sont accessibles en SSH :
-Depuis Windows vous pouvez par exemple utiliser l'outil Putty (https://www.putty.org/) ou Mobaxterm (https://mobaxterm.mobatek.net/download.html)
-Depuis Linux il suffit simplement de lancer un terminal puis de lancer la commande suivante :
+- Depuis Windows vous pouvez par exemple utiliser l'outil Putty (https://www.putty.org/) ou Mobaxterm (https://mobaxterm.mobatek.net/download.html)
+- Depuis Linux il suffit simplement de lancer un terminal puis de lancer la commande suivante :
 `ssh debian@172.28.100.136`
 
 
