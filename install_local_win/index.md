@@ -83,7 +83,7 @@ Ajoutez les lignes suivantes via le bouton **Nouveau** <br>
 
 Refermez les fenêtres et testez le lancment de Spark avec Python via la console Anaconda <br>
 ![](https://user-images.githubusercontent.com/54117403/79699621-f117ed00-8290-11ea-8854-8ac556a21ec6.png)
-<br>
+<br><br>
 Dans la console tapez **pyspark** <br> et vérifiez que le message "**Using Python**" est présent <br>
 ![](https://user-images.githubusercontent.com/54117403/79699755-b2366700-8291-11ea-9bf8-94c17d452cc3.png)
 
