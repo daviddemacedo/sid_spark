@@ -147,3 +147,6 @@ Afin de tester la résilience de notre cluster, nos avons également fait un tes
 
 Nous avons pu observer que le cluster s'est rendu compte qu'un _executor_ ne répondait plus. Il a donc recommencé le traitement de notre programme en initialisant 2 nouveaux _executor_. 
 Avec ce test, nous avons pu constater que notre cluster était tolérant à la panne d'un noeud. 
+
+
+[Page Suivante](https://daviddemacedo.github.io/sid_spark/conclusion/)
