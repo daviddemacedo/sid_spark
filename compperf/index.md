@@ -1,7 +1,8 @@
 # Comparaison des performances des différentes versions du programme
 
 ## Exécution du programme en stand-alone
-Afin d'effectuer la comparaison de notre programme en mode local contre le mode cluster, nous allons dans un premier temps lancer notre script en local sur une des machines du cluster (en effet, il ne nous paraît pas très adéquate de comparer les performances entre le lancement de notre application sur nos pc personnels et le cluster via les instances fournis par l'université. Nos machines personnelles sont bien plus puissantes et l'environnement est totalement différent). 
+Afin d'effectuer la comparaison de notre programme en mode local contre le mode cluster, nous allons dans un premier temps lancer notre script en local sur une des machines du cluster.
+En effet, il ne nous paraît pas très adéquate de comparer les performances entre le lancement de notre application sur nos pc personnels et le cluster via les instances fournis par l'université. Nos machines personnelles sont bien plus puissantes et l'environnement est totalement différent. 
 
 Pour cela, nous allons lancer la commande suivante : <br>
 `spark-submit --master yarn --deploy-mode client --py-files hdfs://master:9000/scripts/incidents_corp.py hdfs://master:9000/scripts/incidents_corp.py`
@@ -33,10 +34,10 @@ Nous obtenons bien le résultat voulu :
 |      75020|PARIS-20E-ARRONDI...| 4756|
 +-----------+--------------------+-----+
 ```
-Et via l'interface web de spark, on peut voir différentes informations intéressantes: <br>
+Via l'interface web de spark, on peut voir différentes informations intéressantes: <br>
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark1.png)
 Nous pouvons observer que l'application a mis 58s pour s'exécuter. 
-En cliquant sur les différents onglets, on obtient le détaille de l'exécution des différentes tâches de notre programme : <br>
+En cliquant sur les différents onglets, on obtient le détail de l'exécution des différentes tâches de notre programme : <br>
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark2.png)
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark3.png)
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark4.png)
@@ -117,7 +118,7 @@ L'interface web de spark nous montre :
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkcluster4.png)
 
 On observe que notre programme met plus de temps à se finaliser en mode cluster qu'en mode local, certaine tâches mettent plus de temps en mode cluster.
-Etant donnée qu'on utilise plus de ressources en mode cluster, on devrait en théorie avoir de meilleures performances en mode cluster. Néanmoins, notre jeux de données n'est pas assez volumineux pour qu'il y ait un intérêt à l'utiliser via une architecture hadoop / spark en cluster. Cette technologie a été crée pour traiter des données très importantes. C'est pour ce type de données très volumineuses qu'un cluster hadoop / spark prend tout son intérêt. 
+Etant donné qu'on utilise plus de ressources en mode cluster, on devrait en théorie avoir de meilleures performances en mode cluster. Néanmoins, notre jeux de données n'est pas assez volumineux pour qu'il y ait un intérêt à l'exécuter via une architecture hadoop / spark en cluster. Cette technologie a été crée pour traiter des données très importantes. C'est pour ce type de données très volumineuses qu'un cluster hadoop / spark prend tout son intérêt. 
 
 ## Exécution du programme en cluster (paramétrée)
 Nous avons pu observer qu'en mode cluster uniquement 2 workers étaient utilisés, alors que potentiellement, spark pourrait en utiliser 6. On a donc 4 instances qui ne font rien, ce qui représente des ressources gâchées.   
@@ -126,9 +127,9 @@ Pour remédier à cela, nous avons éditer le fichier `spark-defaults.conf` et a
 spark.executor.cores    1
 spark.executor.instances  11
 ```
-`spark.executor.cores` indique à spark combien de core utiliser pour les _executor_. Nos instances possèdent 2 core, on indique donc à spark d'utiliser 1 core par _executor_.
+`spark.executor.cores` indique à spark combien de core utiliser pour les _executor_. Nos instances possèdent 2 cores, on indique donc à spark d'utiliser 1 core par _executor_.
 `spark.executor.instances` indique à spark le nombre d'_executor_ à instancier. Ici on indique à spark d'initier 11 _executor_. On aura donc 2 _executor_ par instances  avec 1 core pour chaque _executor_. Une instance n'aura qu'un seul _executor_, car le _driver_ sera initialisé sur cette dernière, des ressources seront donc déjà utilisées. 
-A noter qu'il est possible d'initialiser autant d'_executor_ tant qu'on a de la mémoire disponible. Lorsqu'on arrivera au maximum de mémoire utilisée spécifié dans les paramètres yarn, spark ne pourra plus initialiser des _executor_.
+A noter qu'il est possible d'initialiser autant d'_executor_ tant qu'on a de lmémoire disponible. Lorsqu'on arrivera au maximum de mémoire utilisée spécifié dans les paramètres yarn, spark ne pourra plus initialiser de nouvel _executor_.
 
 Exécutons notre application avec cette conf pour observer le résultat : 
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep1.png)
@@ -137,7 +138,7 @@ Exécutons notre application avec cette conf pour observer le résultat :
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep4.png)
 
 Nous remarquons qu'il a fallu encore plus de temps pour traiter notre application: **1,8 min** contre **1,1 min** avec la configuration précédente. 
-Néanmoins, on observe que l'ensemble de nos instances ont été utilisées. 2 _executor_ ont étés répartis sur chaque instance comme prévu (et 1 `executor` pour l'instance qui porte le driver). Par contre, la plupart des tâches ont été exécutées uniquement par 2 executor. Il n'y a donc pas vraiment de valeur ajouté à répartir les différentes tâches de notre programme au sein des différents worker. 
+Néanmoins, on observe que l'ensemble de nos instances ont été utilisées. 2 _executor_ ont étés répartis sur chaque instance comme prévu (et 1 `executor` pour l'instance qui porte le driver). Par contre, la plupart des tâches ont été exécutées uniquement par 2 executors. Il n'y a donc pas vraiment de valeur ajoutée à répartir les différentes tâches de notre programme au sein des différents workers. 
 
 ## Test de résilience du cluster
 Afin de tester la résilience de notre cluster, nos avons également fait un test de panne d'un worker pendant l'exécution de notre application : 
@@ -146,7 +147,7 @@ Afin de tester la résilience de notre cluster, nos avons également fait un tes
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkfailover3.png)
 
 Nous avons pu observer que le cluster s'est rendu compte qu'un _executor_ ne répondait plus. Il a donc recommencé le traitement de notre programme en initialisant 2 nouveaux _executor_. 
-Avec ce test, nous avons pu constater que notre cluster était tolérant à la panne d'un noeud. 
+Avec ce test, nous avons pu constater que notre cluster est tolérant à la panne d'un noeud. 
 
 
 [Page Suivante](https://daviddemacedo.github.io/sid_spark/conclusion/)
