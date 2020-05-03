@@ -7,7 +7,7 @@ Toutes les actions sont à répéter sur chaque instance.
 
 Au préalable, il est nécessaire d'effectuer des actions sur les instances afin que ces dernières puissent fonctionner en mode cluster et puissent communiquer entre elles. 
 
-Editer le fichier `/etc/hosts` et insérer l'ip de l'instance (172.28.100.xx / xx correspond à l'ip de la machine correspondante) et son nom d'host. Egalement y insérer les ips et nom d'host des autres instances. A la fin, le fichier devrait ressembler à cela : 
+Editez le fichier `/etc/hosts` et insérez l'ip de l'instance (172.28.100.xx / xx correspond à l'ip de la machine correspondante) et son nom d'host. Insérez également les ips et nom d'host des autres instances. A la fin, le fichier devrait ressembler à cela : 
 ```
 ubuntu@master:~$ cat /etc/hosts
 127.0.0.1 localhost
@@ -31,9 +31,9 @@ Enter same passphrase again:
 Your identification has been saved in /home/ubuntu/.ssh/id_rsa.
 Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub.
 ```
-Copier le contenu de votre clé publique dans le fichier authorized_keys: <br>
+Copiez le contenu de votre clé publique dans le fichier authorized_keys: <br>
 `cat id_rsa.pub >> authorized_keys `
-Copier également le contenu de la clé publique sur le fichier authorized_keys de toutes les autres instances. 
+Copiez également le contenu de la clé publique sur le fichier authorized_keys de toutes les autres instances. 
 
 Certains packages sont nécessaires en pré requis :
 ```
@@ -81,10 +81,10 @@ Available Java Versions
 ....
 ```
 
-Nous allons installer la version de java 8.0.242.hs de AdoptOpenJDK via la commande suivante :<br> 
+Installez la version de java 8.0.242.hs de AdoptOpenJDK via la commande suivante :<br> 
 `ubuntu@master:~$ sdk install java 8.0.242.hs-adpt`
 
-A la fin de l'installation, nous pouvons vérifier la version de java installer : 
+A la fin de l'installation, vérifiez la version de java installée : 
 ```
 ubuntu@master:~$ java -version
 openjdk version "1.8.0_242"
@@ -94,12 +94,12 @@ OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.242-b08, mixed mode)
 
 L'avantage avec sdkman, c'est qu'il est possible simplement d'installer plusieurs version de java. Il suffit ensuite d'indiquer la version de java à utiliser : 
 `sdk use java 13.0.1.hs-adpt`
-Pour ce tp, nous resterons sur la version de java 8. 
+Pour ce TP, nous resterons sur la version de java 8. 
 
 Nous devons également définir explicitement la variable d'environnement JAVA_HOME en l'ajoutant au fichier ~/.bashrc : <br>
 `echo "export JAVA_HOME=\$(readlink -f \$(which java) | sed 's:bin/java::')" >> ~/.bashrc`
 
-echo JAVA_HOME devrait maintenant nous donner le chemin vers le répertoire SDKMAN (penser à ce sourcer de nouveau):
+echo JAVA_HOME devrait maintenant nous donner le chemin vers le répertoire SDKMAN (pensez à sourcer de nouveau):
 ```
 ubuntu@master:~$ echo $JAVA_HOME
 /home/ubuntu/.sdkman/candidates/java/8.0.242.hs-adpt/
@@ -111,20 +111,20 @@ Comme pour Java,  nous allons installer un utilitaire qui permet de gérer plusi
 ```
 curl https://pyenv.run | bash
 ```
-Ajouter les lignes suivantes à ~/.bashrc:
+Ajoutez les lignes suivantes à ~/.bashrc:
 ```
 export PATH="/home/ubuntu/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-Et enfin réinitialiser votre bash: <br> 
+Et enfin réinitialisez votre bash: <br> 
 `exec $SHELL`
 Nous allons maintenant installer Python via pyenv: 
 ```
 pyenv install 3.8.2
 pyenv global 3.8.2
 ```
-Vérification que python est bien installé : 
+Vérifiez que python est bien installé : 
 ```
 ubuntu@slave1:/opt/hadoop/etc/hadoop$ python -V
 Python 3.8.2
@@ -262,7 +262,7 @@ Le suivant est `hdfs-site.xml` qui configure où le NameNode va stocker l'histor
 ```
 La valeur 3 correspond aux nombres de réplications voulues. 
 
-Le fichier suivant est `mapred-site.xml`, nous allons configurer les paramètres spécifiques à MapReduce tel que les paramètres mémoire, ainsi qu'utiliser YARN comme implémentation de MapReduce. Le fichier devrait ressembler à celui-ci :
+Le fichier suivant est `mapred-site.xml`, nous allons configurer les paramètres spécifiques à MapReduce tels que les paramètres mémoire, ainsi qu'utiliser YARN comme implémentation de MapReduce. Le fichier devrait ressembler à celui-ci :
 ```
 <configuration>
   <property>
@@ -378,23 +378,23 @@ export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
 cd $SPARK_HOME/conf
 sudo mv spark-defaults.conf.template spark-defaults.conf
 ```
-Beaucoup de paramètres peuvent être personnalisés dans ce fichier, notamment ceux relatif à la mémoire allouée aux conteneurs spark. En effet, ces derniers pour fonctionner dans des conteneurs YARN peut échouer si l'allocation de la mémoire n'est pas configurée correctement. <br>
+Beaucoup de paramètres peuvent être personnalisés dans ce fichier, notamment ceux relatifs à la mémoire allouée aux conteneurs spark. En effet, ces derniers pour fonctionner dans des conteneurs YARN peut échouer si l'allocation de la mémoire n'est pas configurée correctement. <br>
 Si la mémoire demandée est supérieure au maximum autorisé, YARN refusera la création du conteneur et notre application Spark ne démarrera pas. Il est donc nécessaire au préable de s'assurer que la valeur de `yarn.scheduler.maximum-allocation-mb` dans `$HADOOP_CONF_DIR/yarn-site.xml` (ce paramètre correspond à la valeur maximale autorisée en MB pour un seul conteneur) est supérieure à l'allocation mémoire configurée pour spark. 
 
-Nous avons observé qu'en laissant les paramètres par défaut la mémoire allouée pour spark ne dépassait pas les 3gb configurée pour YARN. Dans un premier temps, nous ne personnalisons pas ces paramètres, nous y reviendrons plus tard dans le TP. 
+Nous avons observé qu'en laissant les paramètres par défaut la mémoire allouée pour spark ne dépassait pas les 3GB configurés pour YARN. Dans un premier temps, nous ne personnalisons pas ces paramètres, nous y reviendrons plus tard dans le TP. 
 
 Lors d'un lancement d'un job, spark démarre une interface web sur le port 4040 afin de suivre l'évolution de l'application. Cette interface web est stoppée à la fin du job spark. 
 Afin d'activer en permanence cette interface, nous allons activer le service _history server_ de spark. 
-Pour cela, dans le fichier `spark-defaults.conf`, nous allons ajouter les paramètres suivants : 
+Pour cela, dans le fichier `spark-defaults.conf`, ajoutez les paramètres suivants : 
 ```
 spark.eventLog.enabled           true
 spark.eventLog.dir               hdfs://master:9000/logs/
 spark.history.fs.logDirectory    hdfs://master:9000/logs/
 ```
-Et enfin démarrer le script : `start-history-server.sh` présent dans `/opt/spark/sbin`.
+Et enfin démarrez le script : `start-history-server.sh` présent dans `/opt/spark/sbin`.
 Cela crée une interface web à l'adresse `http://<server-url>:18080` par défaut, qui historisent les différents lancements d'application spark. 
 
-Enfin pour que ces changement prennent effet il faut redémarrer le cluster : 
+Enfin, pour que ces changement prennent effet, il faut redémarrer le cluster : 
 ```
 stop-dfs.sh && stop-yarn.sh
 
