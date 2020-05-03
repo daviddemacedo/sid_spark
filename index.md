@@ -1,3 +1,9 @@
+## TP réalisé par : 
+David De Macedo<br>
+Hervé Coste<br>
+Floriane Chalet<br>
+
+
 # Sommaire
 
 [Installez Spark sur votre machine locale MacOs](https://daviddemacedo.github.io/sid_spark/install_local_macos/)
