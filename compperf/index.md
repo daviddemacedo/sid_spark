@@ -129,7 +129,7 @@ spark.executor.instances  11
 ```
 `spark.executor.cores` indique à spark combien de core utiliser pour les _executor_. Nos instances possèdent 2 cores, on indique donc à spark d'utiliser 1 core par _executor_.
 `spark.executor.instances` indique à spark le nombre d'_executor_ à instancier. Ici on indique à spark d'initier 11 _executor_. On aura donc 2 _executor_ par instances  avec 1 core pour chaque _executor_. Une instance n'aura qu'un seul _executor_, car le _driver_ sera initialisé sur cette dernière, des ressources seront donc déjà utilisées. 
-A noter qu'il est possible d'initialiser autant d'_executor_ tant qu'on a de lmémoire disponible. Lorsqu'on arrivera au maximum de mémoire utilisée spécifié dans les paramètres yarn, spark ne pourra plus initialiser de nouvel _executor_.
+A noter qu'il est possible d'initialiser autant d'_executor_ tant qu'on a de la mémoire disponible. Lorsqu'on arrivera au maximum de mémoire utilisée spécifié dans les paramètres yarn, spark ne pourra plus initialiser de nouvel _executor_.
 
 Exécutons notre application avec cette conf pour observer le résultat : 
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/sparkclusterrep1.png)
@@ -143,13 +143,13 @@ Néanmoins, on observe que l'ensemble de nos instances ont été utilisées. 2 _
 ## Exécution du programme en cluster (spark memoire customisé)
 
 Nous avons vu que le fait de paralléliser notre application ne nous a pas fait gagner du temps d'exécution de notre programme. 
-Essayons maintenant de personnaliser les paramètres mémoires de notre centenaire spark. 
+Essayons maintenant de personnaliser les paramètres mémoires de notre contenaire spark. 
 Pour cela il est nécessaire de comprendre les différents paramètres à modifier. Nous pouvons nous appuyer sur le schéma suivant : 
 ![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/spark_mem_schema.png)
 Les paramètres à modifier / insérer dans le fichier `spark-defaults.conf` sont les suivants : <br>
-`spark.executor.memory` : Taille de la mémoire à utiliser pour chaque executor qui exécute la tâche.<br>
-`spark.driver.memory` : Taille de la mémoire à utiliser pour le driver.<br>
-`spark.default.parallelism` : Nombre par défaut de partitions dans les ensembles de données distribuées résilientes (RDD) renvoyées par des transformations telles que join, reduceByKey, et  parallelize, lorsqu'aucun nombre de partition n'est défini par l'utilisateur.<br>
+`spark.executor.memory` : Taille de la mémoire à utiliser pour chaque _executor_ qui exécute la tâche.<br>
+`spark.driver.memory` : Taille de la mémoire à utiliser pour le _driver_.<br>
+`spark.default.parallelism` : Nombre par défaut de partitions dans les ensembles de données distribuées résilientes (RDD) renvoyées par des transformations telles que `join`, `reduceByKey`, et  `parallelize`, lorsqu'aucun nombre de partition n'est défini par l'utilisateur.<br>
 
 Nous allons essayer d’utiliser toutes nos ressources de la manière suivantes : 
 ```
@@ -175,9 +175,9 @@ Observons ce que cela donne à l'éxécution de notre application :
 Il a fallu 1,2 min pour traiter notre application. On se rapproche de la valeur de 1,1 min avec la conf par défault. Mais on fait toujours moins bien qu’en local. 
 5 _executor_ ce sont initiés alors qu’on en avait spécifié 6. Cela est dû à la valeur de mémoire du driver où on a indiqué 2688m, il ne reste donc plus de mémoire disponible sur l’instance qui porte le driver pour initier un autre _executor_. 
 On oberserve également que la mémoire de chaque _executor_ est égal à 1,2G alors qu’on avait spécifier 2688m. En effet la valeur que l’on nous indique (1,2G) indique la valeur de mémoire qui est stocké. Par défaut cette dernière est égale à 60% de `spark.executor.memory`, on tombe bien donc sur 1,2G.
-Pour finir, nous remarquons que les _jobs_ de notre applications ont étés mieux réparties sur l’ensemble de nos _executor_. 
+Pour finir, nous remarquons que les _jobs_ de notre applications ont étés mieux réparties sur l’ensemble de nos _executor_, ce qui nous semble être une bonne chose si notre but est d'utiliser toutes nos ressources. 
 
-Une autre approche, serait de faire de multiples petits _executor_, plutôt que faire de « gros » _executor_. C’est plus ou moins ce qui a été effectués précédemment lorsque nous avions spécifié spark.executor.instances  11 et laissé les paramètres mémoire de spark par défault (spark.executor.memory  =1g). Nous avons observé que ça n’avait pas vraiment améliorer nos performances. 
+Une autre approche, serait de faire de multiples petits _executor_, plutôt que faire de « gros » _executor_. C’est plus ou moins ce qui a été effectués précédemment lorsque nous avions spécifié `spark.executor.instances = 11` et laissé les paramètres mémoire de spark par défault (par defaut `spark.executor.memory  =1g`). Nous avons observé que ça n’avait pas vraiment amélioré nos performances. 
 
 
 ## Test de résilience du cluster
