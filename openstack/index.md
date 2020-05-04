@@ -5,7 +5,7 @@ Notre cluster étant composé d'une VM master et de 5 VM slaves que nous avons n
 
 Pour cela, suivez le tutoriel suivant : (http://cloud.univ-lille.fr/cloud_ULille_tutoriel.pdf) avec les informations ci-dessous :
 - Source : "ubuntu-18.04"
-- Gabarit: "puissante"
+- Gabarit : "puissante"
 
 Lors de leur création, les instances récupèrent chacune une adresse IP dans le même réseau : 172.28.100.0/16. Elles peuvent donc communiquer entre elles directement.
 
