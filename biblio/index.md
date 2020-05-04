@@ -7,7 +7,8 @@
 [building-a-raspberry-pi-hadoop-spark-cluster](https://dev.to/awwsmm/building-a-raspberry-pi-hadoop-spark-cluster-8b2)<br>
 [install-configure-run-spark-on-top-of-hadoop-yarn-cluster](https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/)<br>
 [how-to-install-and-set-up-hadoop-cluster](https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/) <br>
-[Guide d'installation Spark pour Windows 10] (https://www.bigtechtalk.com/apache-spark-on-windows) <br>
+[Guide d'installation Spark pour Windows 10](https://www.bigtechtalk.com/apache-spark-on-windows) <br>
+[Spark Doc](http://spark.apache.org/docs/latest/index.html)
 
 
 [Retour Sommaire](https://daviddemacedo.github.io/sid_spark/)
