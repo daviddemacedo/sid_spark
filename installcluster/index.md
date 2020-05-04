@@ -346,6 +346,9 @@ Nous pouvons tester le cluster en mettant des fichiers dans le HDFS à partir de
 
 ![hadoop img web](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/hadoop.png)
 
+Nous avons également accès à une webui qui concerne yarn et l'exécution des applications, pour se connecter il d'utiuliser l'url suivante : http://master:8088 
+![](https://raw.githubusercontent.com/daviddemacedo/sid_spark/master/img/yarn.png)
+
 ## Explication des paramètres mémoire 
 
 L'allocation de la mémoire peut être délicate sur des instances avec peu de RAM car les valeurs par défaut ne conviennent pas aux instances avec moins de 8 Go de RAM. Nous avons donc essayé de personnaliser les paramètres mémoire pour nos instances qui possèdent 4go de RAM. 
