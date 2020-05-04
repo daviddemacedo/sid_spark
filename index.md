@@ -32,8 +32,8 @@ Floriane Chalet<br>
 
 [Comparaison des performances des différentes versions du programme](https://daviddemacedo.github.io/sid_spark/compperf/)
 
-[Conclusion](https://daviddemacedo.github.io/sid_spark/conclusion/)
+### [Conclusion](https://daviddemacedo.github.io/sid_spark/conclusion/)
 
-[Bibliographie](https://daviddemacedo.github.io/sid_spark/biblio/)
+### [Bibliographie](https://daviddemacedo.github.io/sid_spark/biblio/)
 
 
