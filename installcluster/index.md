@@ -325,8 +325,9 @@ Ensuite, nous devons créer deux fichiers dans `/opt/hadoop/etc/hadoop/` qui ind
 ```
 master
 ```
-Ensuite, créez un fichier nommé `workers`  dans le même répertoire et ajoutez tous les autres instances :
+Ensuite, créez un fichier nommé `workers`  dans le même répertoire et ajoutez tous les instances :
 ```
+master
 slave1
 slave2
 slave3
